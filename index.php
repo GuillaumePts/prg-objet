@@ -5,7 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 require './inc/header.php';
 require_once './classes/Voiture.php';
 
-$voiture1 = new Voiture();
+$voiture1 = new Voiture("jaune");
 
 $voiture1->setColor("Noir");
 echo $voiture1->getColor();
@@ -19,7 +19,7 @@ echo $voiture1->getMarque();
 
 
 
-$voiture2 = new Voiture();
+$voiture2 = new Voiture("jaune");
 
 // $voiture2->marque="peugeot";
 $voiture2->setMarque("peugeot");
