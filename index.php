@@ -12,7 +12,8 @@ $voiture1->marque="BMW";
 $voiture2 = new Voiture();
 $voiture2->couleur="vert";
 $voiture2->marque="peugeot";
+$voiture2->demarrer();
 
-var_dump($voiture1);
-var_dump($voiture2);
+dump($voiture1);
+dump($voiture2);
 require './inc/footer.php';
