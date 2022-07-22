@@ -3,33 +3,19 @@
 
 require __DIR__ . '/vendor/autoload.php';
 require './inc/header.php';
-require_once './classes/Voiture.php';
 
-$voiture1 = new Voiture("jaune");
+spl_autoload_register(function ($className){
+    require_once './classes/' .$className. '.php';
+});
 
-$voiture1->setColor("Noir");
-echo $voiture1->getColor();
-
-
-$voiture1->setMarque("BMW");
-echo $voiture1->getMarque();
-
-
+$voiture1 = new Voiture();
+$voiture1->setMarque('BMW');
+$voiture1->setVitesse(50);
+$voiture1->setMasse(1200);
+echo $voiture1->calculerEnergieCinetique(). 'Joules<br />';
+$voiture1->setVitesse(140);
+echo $voiture1->calculerEnergieCinetique(). 'Joules<br />';
 dump($voiture1);
-
-
-
-$voiture2 = new Voiture("jaune");
-
-// $voiture2->marque="peugeot";
-$voiture2->setMarque("peugeot");
-echo $voiture2->getMarque();
-
-$voiture2->setColor("vert");
-echo $voiture2->getColor();
-
-$voiture2->demarrer();
-
-// dump($voiture1);
-// dump($voiture2);
+// $vehicule= new Vehicule(); /* class abstrait donc ne marche pas*/
+// dump($vehicule);
 require './inc/footer.php';
