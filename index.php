@@ -15,7 +15,7 @@ $voiture1->setMarque("BMW");
 echo $voiture1->getMarque();
 
 
-
+dump($voiture1);
 
 
 
